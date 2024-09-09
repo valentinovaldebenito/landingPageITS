@@ -1,18 +1,11 @@
 let sideBar = document.getElementById('sideBar');
-let menuBtn = document.querySelector('.menuBtn');
-let headerCol3Mobile = document.getElementById('headerCol3Mobile');
-let open = false;
-
-function showMenu(){
-    if (!open) {
-        open = !open
-        sideBar.style.display = "flex";
-        headerCol3Mobile.style.display = "none";
-    } else {
-        if (open == true) {
-            open = false
-            sideBar.style.display = "none";
-            headerCol3Mobile.style.display = "flex";
-        }
-    }
-}
+let open = document.getElementById('open');
+let close = document.getElementById('close');
+open.addEventListener('click', () => {
+    sideBar.classList.add('active');
+    open.classList.add('hide');
+});
+close.addEventListener('click', () => {
+    sideBar.classList.remove('active');
+    open.classList.remove('hide');
+});
